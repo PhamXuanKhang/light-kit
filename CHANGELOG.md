@@ -5,6 +5,33 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ---
 
+## [v7.0-draft] — 2026-06-28
+
+### Added
+- `skill-v7/SKILL.md` as a draft entry point for a compact, agent-agnostic product engineering workflow.
+- `skill-v7/references/human-workflow.md` with the human-first workflow: Evidence Scan → Align → Explore → Decide → Detail → Execute.
+- `skill-v7/references/agent-workflow.md` defining Solo Coding Agent, Agent + Reviewer, Multi-Agent, and Chat-Assisted modes.
+- `skill-v7/references/compact-artifacts.md` with compact templates for Codebase Brief, Project Brief, PRD-lite, SSD Options, Decision Log, LLD, Task Graph, Execution Cards, and Verify Ledger.
+- `skill-v7/references/verification-policy.md` with evidence-based verification rules and compact/full QA behavior.
+- `skill-v7/references/migration-from-v6.md` mapping v6 concepts and artifacts to v7 equivalents.
+- `skill-v7/references/source-map.md` to document the origin of internal concepts, external standards, and user-provided workflow sources.
+- `skill-v7/sources/README.md` as a contributor-facing bibliography and source index.
+- `skill-v7/sources/product-triangle-nexus-workflow.md` as the local Markdown source for the Nexus-style PRD → SSD → LLD workflow.
+- v7 metrics in `CASE-STUDIES.md` for artifact count, report length, full report count, human relay count, decision-grade questions, auto-answered items, time to first code, context reloads, and verify evidence coverage.
+
+### Changed
+- `README.txt` now describes both v7 Draft and v6 Stable, with v7 as the recommended review/iteration track and v6 as the stable packaged skill.
+- `CURRENT_VERSION.md` now distinguishes the v7 Draft track from the stable v6 package.
+- `CASE-STUDIES.md` now includes separate templates for v7 Draft and v6 legacy/full workflow.
+
+### Design Direction
+- Shifted from a Claude Chat + Claude Code handoff model toward a coding-agent-first workflow with repo evidence.
+- Replaced report-heavy defaults with compact output by default and expanded reports only on risk, failure, handoff, milestone, or explicit request.
+- Reframed RRI as risk-based clarification instead of a fixed 40–60 question phase for every task.
+- Introduced PRD-lite → SSD Options → Decision Log → LLD as the main planning chain.
+
+---
+
 ## [v6.0] — 2026-03-17
 
 ### Changed

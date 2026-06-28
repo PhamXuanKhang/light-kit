@@ -1,110 +1,171 @@
 ╔═══════════════════════════════════════════════════════════════╗
-║                    VIBECODE KIT v6.0                          ║
-║         General-Purpose AI-Assisted Development               ║
+║                    VIBECODE KIT                              ║
+║        Human-first workflow for coding agents                 ║
 ║              Biến ý tưởng thành sản phẩm thật                 ║
 ╚═══════════════════════════════════════════════════════════════╝
 
+TRẠNG THÁI HIỆN TẠI
+
+  • v7 Draft: hướng phát triển mới — compact, agent-agnostic,
+    ưu tiên coding agent có quyền đọc codebase.
+
+  • v6.0 Stable: bản ổn định hiện tại — general-purpose AI-assisted
+    development methodology với 3 vai trò và workflow 8 bước.
+
+  • vibecode-kit.skill hiện vẫn là package cài đặt chính cho v6.
+    v7 đang là draft tài liệu trong thư mục skill-v7/ để review,
+    thử nghiệm và chuẩn hóa trước khi đóng gói thành skill cài đặt.
+
 VIBECODE KIT LÀ GÌ?
 
-  Một phương pháp luận phát triển phần mềm với AI, dùng 3 vai trò:
-  • Chủ nhà (Con người) — Ra quyết định chiến lược
-  • Chủ thầu (Claude Chat / Cowork) — Thiết kế, phỏng vấn, điều phối
-  • Thợ thi công (Claude Code) — Triển khai, test, báo cáo
+  Vibecode Kit là một phương pháp luận phát triển phần mềm với AI.
+  Mục tiêu của project là giúp con người và coding agent phối hợp có
+  cấu trúc: làm rõ yêu cầu, chọn hướng kỹ thuật, chia task, implement,
+  verify và refine.
 
-  Quy trình 8 bước:
-  SCAN → RRI → VISION → BLUEPRINT → TASK GRAPH → BUILD → VERIFY → REFINE
+  Hướng v7 chuyển trọng tâm từ:
 
-CÁCH CÀI ĐẶT:
+    Claude Chat lập kế hoạch → paste sang Claude Code → report dài
 
-  Bước 1: Mở file vibecode-kit.skill trong thư mục này
-  Bước 2: Click "Copy to your skills" để cài vào Claude
-  Bước 3: Bắt đầu bằng cách mô tả dự án (xem QUICKSTART bên dưới)
+  sang:
 
-  Skill sẽ tự kích hoạt khi bạn nhắc đến vibecode, Chủ thầu,
-  Thợ thi công, TIP, RRI, Blueprint, hoặc yêu cầu build bất kỳ
-  dự án phần mềm nào theo methodology có cấu trúc.
+    Một coding agent đọc repo → tạo artifact ngắn → hỏi đúng quyết định
+    → implement task nhỏ → verify bằng evidence → report compact
 
-QUICKSTART — BẮT ĐẦU TRONG 2 PHÚT:
+QUY TRÌNH v7 DRAFT
 
-  Sau khi cài skill, mở Claude Chat hoặc Cowork và gõ:
+  Core workflow:
 
-  ┌─────────────────────────────────────────────────────────────┐
-  │  Bạn:  "Chủ thầu, tôi muốn build một app quản lý kho      │
-  │         hàng cho cửa hàng nhỏ."                             │
-  │                                                             │
-  │  Claude (Chủ thầu) sẽ tự động:                              │
-  │  1. Hỏi bạn có codebase sẵn không → gửi SCAN cho Thợ      │
-  │  2. Chạy RRI — phỏng vấn ngược bạn 40-60 câu thông minh   │
-  │  3. Đề xuất VISION (kiến trúc + tech stack + design)       │
-  │  4. Lập BLUEPRINT chi tiết → bạn duyệt "APPROVED"          │
-  │  5. Sinh TASK GRAPH (các TIP) → gửi từng TIP cho Thợ      │
-  │  6. Thợ code, tự test, nộp báo cáo                         │
-  │  7. Chủ thầu VERIFY → báo cáo coverage %                   │
-  │  8. REFINE nếu cần → ship                                  │
-  └─────────────────────────────────────────────────────────────┘
+    EVIDENCE SCAN → ALIGN → EXPLORE → DECIDE → DETAIL → EXECUTE
 
-  Các câu trigger khác bạn có thể dùng:
-  • "Chủ thầu, phỏng vấn ngược tôi về dự án này"    → Bắt đầu RRI
-  • "Debug giúp tôi lỗi này: [paste error]"          → Debug Protocol
-  • "Nghiệm thu dự án"                               → QA Protocol
-  • "X-Ray codebase này cho tôi"                     → X-Ray Protocol
+  Trong đó:
 
-VÍ DỤ FLOW THỰC TẾ (rút gọn):
+  • Evidence Scan
+    Đọc codebase/tài liệu hiện có trước khi thiết kế.
 
-  Bạn:   Chủ thầu, tôi cần API service quản lý đơn hàng,
-         dùng Python FastAPI, deploy lên AWS.
+  • Align
+    Tạo Project Brief: problem, goal, scope, non-goals, success criteria.
 
-  Chủ thầu: Chào Chủ nhà! Tôi detect đây là một API service.
-         Trước tiên, bạn có codebase sẵn không?
+  • Explore
+    Tạo PRD-lite và SSD Options khi có nhiều hướng kỹ thuật hợp lý.
 
-  Bạn:   Chưa, bắt đầu từ đầu.
+  • Decide
+    Chọn hướng, ghi Decision Log / ADR cùng trade-off.
 
-  Chủ thầu: OK. Tôi đề xuất VISION:
-         PROJECT: Order Management API
-         NATURE: API-only + CRUD + Team scale
-         TECH: FastAPI + PostgreSQL + SQLAlchemy + Docker
-         Tôi sẽ bắt đầu RRI để tìm hiểu chi tiết. Ready?
+  • Detail
+    Tạo LLD, Task Graph, Execution Cards.
 
-  Bạn:   Ready.
+  • Execute
+    Coding agent implement, chạy test, cập nhật Verify Ledger.
 
-  Chủ thầu: [Chạy RRI — 45 câu qua 5 personas]
-         ...
-         RRI REPORT hoàn thành. 23 REQ-IDs, 8 quyết định.
-         Chuyển sang BLUEPRINT. Duyệt?
+ĐIỂM KHÁC BIỆT v7 SO VỚI v6
 
-  Bạn:   APPROVED.
+  v6:
+    SCAN → RRI → VISION → BLUEPRINT → TASK GRAPH → BUILD → VERIFY → REFINE
 
-  Chủ thầu: [Sinh 6 TIPs: Scaffold → DB → API → Auth → Test → Deploy]
-         Gửi TIP-001 cho Thợ thi công...
+  v7:
+    EVIDENCE SCAN → ALIGN → EXPLORE → DECIDE → DETAIL → EXECUTE
 
-  Thợ:   COMPLETION REPORT — TIP-001
-         STATUS: DONE | FILES: 12 created | TESTS: 3/3 passed
+  v6 mặc định map vai trò vào Claude Chat / Claude Code.
+  v7 chuyển sang responsibility-based, agent-agnostic:
 
-  [... tiếp tục đến VERIFY → REFINE → Ship]
+    • Human decision owner
+    • Product-tech planner
+    • Executor / verifier
+    • Optional reviewer
 
-CẤU TRÚC THƯ MỤC:
+  v6 dùng TIP và Completion Report đầy đủ.
+  v7 dùng Execution Card và Compact Report mặc định.
+
+  v6 RRI có target 40–60 câu hỏi.
+  v7 RRI là kỹ thuật hỏi theo rủi ro: “I see it like this — correct?”
+
+CÁCH DÙNG NHANH
+
+  Nếu muốn dùng bản ổn định hiện tại:
+
+    1. Mở file vibecode-kit.skill
+    2. Copy/install vào Claude
+    3. Dùng workflow v6 theo skill hiện tại
+
+  Nếu muốn thử hướng v7 draft:
+
+    1. Đọc skill-v7/SKILL.md
+    2. Đọc skill-v7/references/human-workflow.md
+    3. Dùng skill-v7/references/compact-artifacts.md để tạo artifact ngắn
+    4. Chạy task với một coding agent có quyền đọc/sửa repo
+    5. Ghi kết quả vào Verify Ledger thay vì report dài mặc định
+
+CẤU TRÚC THƯ MỤC
 
   vibecode-kit/
-  ├── README.txt              ← Bạn đang đọc file này
-  ├── vibecode-kit.skill      ← Cài đặt skill vào Claude
-  ├── CHANGELOG.md            ← Lịch sử thay đổi
-  ├── CURRENT_VERSION.md      ← Version hiện tại + roadmap
-  ├── PHILOSOPHY_V5.md        ← Triết lý nền tảng (tham khảo)
-  ├── skill-v6/               ← Source code của skill v6
+  ├── README.txt                  ← Bạn đang đọc file này
+  ├── vibecode-kit.skill          ← Package cài đặt chính hiện tại cho v6
+  ├── CURRENT_VERSION.md          ← Trạng thái version + roadmap
+  ├── CHANGELOG.md                ← Lịch sử thay đổi
+  ├── CASE-STUDIES.md             ← Metrics + case study templates
+  ├── PHILOSOPHY_V5.md            ← Triết lý nền tảng tham khảo
+  ├── skill-v7/                   ← v7 draft — compact agent-agnostic workflow
   │   ├── SKILL.md
-  │   └── references/         ← 9 file tham khảo
-  ├── Masters/                ← Prompt masters (DEBUG, QA, XRAY)
-  ├── Archive/                ← Tài liệu cũ (v3, v4, tham khảo)
-  └── GIAO-VIEN-THPT-MASTER.txt  ← Skill riêng (không thuộc core)
+  │   ├── references/
+  │   │   ├── source-map.md
+  │   │   ├── human-workflow.md
+  │   │   ├── compact-artifacts.md
+  │   │   ├── agent-workflow.md
+  │   │   ├── verification-policy.md
+  │   │   └── migration-from-v6.md
+  │   └── sources/
+  │       ├── README.md
+  │       └── product-triangle-nexus-workflow.md
+  ├── skill-v6/                   ← v6 stable source of truth
+  │   ├── SKILL.md
+  │   └── references/
+  ├── Masters/                    ← Standalone prompt masters
+  ├── Archive/                    ← Tài liệu cũ/tham khảo
+  └── GIAO-VIEN-THPT-MASTER.txt   ← Skill riêng, không thuộc core
 
-CÁC PROTOCOL ĐẶC BIỆT:
+NGUỒN THAM KHẢO
 
-  Ngoài quy trình 8 bước chính, framework còn có:
-  • Debug Protocol — Gỡ lỗi có hệ thống (9 bước)
-  • QA Protocol — Nghiệm thu 3 tầng (Tier 1/2/3)
-  • X-Ray Protocol — Bàn giao, đánh giá codebase
-  • RRI Methodology — Phỏng vấn ngược yêu cầu (5 personas)
-  • RRI-T / RRI-UX / RRI-UI — Mở rộng cho Testing & UX
+  v7 có source tracking riêng để contributor biết concept đến từ đâu:
+
+    skill-v7/sources/README.md
+    skill-v7/references/source-map.md
+
+  Nguồn chính gồm:
+
+  • Tài liệu local “Tam giác sản phẩm - Quy trình làm việc mới”
+    → skill-v7/sources/product-triangle-nexus-workflow.md
+
+  • Agile Manifesto
+    → https://agilemanifesto.org/
+
+  • Cucumber Gherkin Reference
+    → https://cucumber.io/docs/gherkin/reference/
+
+  • W3C WCAG 2.2
+    → https://www.w3.org/TR/WCAG22/
+
+  • Keep a Changelog
+    → https://keepachangelog.com/en/1.1.0/
+
+CÁC PROTOCOL ĐẶC BIỆT
+
+  Các protocol từ v6 vẫn còn giá trị và được v7 dùng lại theo hướng compact:
+
+  • Debug Protocol — gỡ lỗi dựa trên evidence
+  • QA Protocol — nghiệm thu theo tier, full report khi milestone/risk
+  • X-Ray Protocol — bàn giao/onboarding/audit
+  • RRI Methodology — phỏng vấn ngược yêu cầu
+  • RRI-T / RRI-UX / RRI-UI — mở rộng cho Testing & UX
+
+GHI CHÚ ĐÓNG GÓP
+
+  Khi thêm concept mới vào v7:
+
+  1. Ghi nguồn vào skill-v7/references/source-map.md
+  2. Nếu là nguồn local, đưa bản có thể review lên skill-v7/sources/
+  3. Nếu là external standard, thêm link vào skill-v7/sources/README.md
+  4. Nếu chưa có nguồn rõ, đánh dấu needs citation
 
 ─────────────────────────────────────────────────────────────────
 Vibecode Kit by Lâm Nguyễn
