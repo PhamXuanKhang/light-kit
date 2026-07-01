@@ -1,6 +1,6 @@
-# Vibecode Kit v7 — Human Workflow
+# Lightkit v7 — Human Workflow
 
-Vibecode Kit v7 bắt đầu từ quy trình làm việc của con người trước, sau đó mới chuyển hóa thành workflow cho AI agent. AI là chất xúc tác để scan, tạo nháp, phân tích trade-off, sinh task, implement và verify; AI không phải nguồn thay thế quyết định sản phẩm/kỹ thuật của con người.
+Lightkit v7 bắt đầu từ quy trình làm việc của con người trước, sau đó mới chuyển hóa thành workflow cho AI agent. AI là chất xúc tác để scan, tạo nháp, phân tích trade-off, sinh task, implement và verify; AI không phải nguồn thay thế quyết định sản phẩm/kỹ thuật của con người.
 
 ## Core Workflow
 
@@ -27,7 +27,7 @@ Evidence Scan là pre-step bắt buộc với existing codebase và tùy chọn 
 
 ### Mục tiêu
 
-Hiểu hiện trạng trước khi hỏi hoặc thiết kế. Đây là phần kế thừa SCAN của Vibecode v6 nhưng rút gọn để tránh report dài.
+Hiểu hiện trạng trước khi hỏi hoặc thiết kế. Đây là phần kế thừa SCAN của Lightkit v6 nhưng rút gọn để tránh report dài.
 
 ### Khi dùng
 
@@ -278,7 +278,7 @@ Issues:
 
 ---
 
-## Mapping từ Vibecode v6 sang v7
+## Mapping từ Lightkit v6 sang v7
 
 | v6 Step | v7 Human Workflow | Action |
 |---|---|---|
@@ -294,9 +294,25 @@ Issues:
 
 ## Tier sử dụng
 
-| Tier | Khi dùng | Artifact tối thiểu |
-|---|---|---|
-| Lite | Bugfix/task nhỏ | Codebase Brief ngắn, Task Card, Verify evidence |
-| Standard | Feature vừa | Project Brief, PRD-lite, Selected SSD, Task Graph, Verify Ledger |
-| Full | Module/product lớn | Full 5-phase workflow, SSD Options, ADR, LLD, QA report |
-| Handoff/Audit | Bàn giao/onboarding/audit | Full docs + X-Ray/QA/Debug reports khi cần |
+V7 dùng right-sized mandatory workflow: luôn route task trước, nhưng chỉ tạo artifact đủ để giữ chất lượng quyết định.
+
+| Tier | Khi dùng | Artifact tối thiểu | Verify | Review |
+|---|---|---|---|---|
+| Tiny | Typo, text, config nhỏ, câu hỏi code | Không artifact; trích file path/evidence khi trả lời | Quick Verify nếu có thay đổi | Không |
+| Small | Bugfix, simple refactor, small feature theo pattern rõ | Direct evidence hoặc Task Card ngắn | Quick/Task Verify | Không, trừ khi risk override |
+| Medium | Behavior mới, vài file, endpoint/command/UI flow | Project Brief ngắn, PRD-lite hoặc one-option rationale, Task Graph, Verify Ledger | Task Verify | Optional theo risk |
+| Large | Module/product lớn, architecture, migration rộng | Full PRD-lite, SSD Options, Decision Log/ADR, LLD, Task Graph, Verify Ledger/QA | Milestone QA | Có nếu risk cao |
+| High-risk override | Auth, security, privacy, data/schema migration, billing, public API, outward-facing release | Decision record + LLD/task cards đủ rollback/verify | Deep Verify | Bắt buộc, trừ khi human defer |
+| Handoff/Audit | Bàn giao/onboarding/audit | Handoff pack + current decisions + verify status + risks | Review/QA evidence | Theo mục tiêu |
+
+### TDD trong execution
+
+Nếu behavior testable, ưu tiên `RED → GREEN → REFACTOR`:
+
+1. Thêm hoặc xác định test đang fail.
+2. Xác nhận fail đúng lý do.
+3. Implement thay đổi nhỏ nhất.
+4. Xác nhận pass.
+5. Refactor chỉ khi cần và không đổi behavior.
+
+Nếu test-first không thực tế, ghi rõ lý do và dùng evidence khác: build/typecheck, static inspection, manual scenario, runtime check hoặc review.

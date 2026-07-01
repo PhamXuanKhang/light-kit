@@ -1,4 +1,4 @@
-# TIP & Report Formats — Vibecode Kit v6.0
+# TIP & Report Formats — Lightkit v6.0
 
 ## Table of Contents
 1. [Scan Instruction](#scan-instruction)
@@ -19,7 +19,7 @@
 Give this to Builder (Claude Code) via the Human:
 
 ```markdown
-# SCAN INSTRUCTION — Vibecode Kit v6.0
+# SCAN INSTRUCTION — Lightkit v6.0
 
 ## ROLE
 You are the Builder. Task: Scan codebase and report.
@@ -115,7 +115,7 @@ Generated: [Date]
 
 ```markdown
 # BLUEPRINT: [Project Name]
-## Vibecode Kit v6.0
+## Lightkit v6.0
 
 ### PROJECT INFO
 | Field | Value |
@@ -238,10 +238,10 @@ Create COMPLETION REPORT per standard format after completion.
 Paste this into Claude Code when sending a TIP:
 
 ```markdown
-# Vibecode Kit v6.0 — Task Instruction Pack
+# Lightkit v6.0 — Task Instruction Pack
 
 ## ROLE
-You are the BUILDER in Vibecode Kit v6.0.
+You are the BUILDER in Lightkit v6.0.
 The Contractor (Claude Chat) and Homeowner have AGREED on the design.
 
 ## ABSOLUTE RULES

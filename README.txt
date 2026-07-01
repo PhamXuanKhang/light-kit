@@ -1,5 +1,5 @@
 ╔═══════════════════════════════════════════════════════════════╗
-║                    VIBECODE KIT                              ║
+║                    LIGHTKIT                              ║
 ║        Human-first workflow for coding agents                 ║
 ║              Biến ý tưởng thành sản phẩm thật                 ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -12,13 +12,13 @@ TRẠNG THÁI HIỆN TẠI
   • v6.0 Stable: bản ổn định hiện tại — general-purpose AI-assisted
     development methodology với 3 vai trò và workflow 8 bước.
 
-  • vibecode-kit.skill hiện vẫn là package cài đặt chính cho v6.
+  • lightkit.skill hiện vẫn là package cài đặt chính cho v6.
     v7 đang là draft tài liệu trong thư mục skill-v7/ để review,
     thử nghiệm và chuẩn hóa trước khi đóng gói thành skill cài đặt.
 
-VIBECODE KIT LÀ GÌ?
+LIGHTKIT LÀ GÌ?
 
-  Vibecode Kit là một phương pháp luận phát triển phần mềm với AI.
+  Lightkit là một phương pháp luận phát triển phần mềm với AI.
   Mục tiêu của project là giúp con người và coding agent phối hợp có
   cấu trúc: làm rõ yêu cầu, chọn hướng kỹ thuật, chia task, implement,
   verify và refine.
@@ -84,7 +84,7 @@ CÁCH DÙNG NHANH
 
   Nếu muốn dùng bản ổn định hiện tại:
 
-    1. Mở file vibecode-kit.skill
+    1. Mở file lightkit.skill
     2. Copy/install vào Claude
     3. Dùng workflow v6 theo skill hiện tại
 
@@ -98,9 +98,9 @@ CÁCH DÙNG NHANH
 
 CẤU TRÚC THƯ MỤC
 
-  vibecode-kit/
+  lightkit/
   ├── README.txt                  ← Bạn đang đọc file này
-  ├── vibecode-kit.skill          ← Package cài đặt chính hiện tại cho v6
+  ├── lightkit.skill          ← Package cài đặt chính hiện tại cho v6
   ├── CURRENT_VERSION.md          ← Trạng thái version + roadmap
   ├── CHANGELOG.md                ← Lịch sử thay đổi
   ├── CASE-STUDIES.md             ← Metrics + case study templates
@@ -168,4 +168,4 @@ GHI CHÚ ĐÓNG GÓP
   4. Nếu chưa có nguồn rõ, đánh dấu needs citation
 
 ─────────────────────────────────────────────────────────────────
-Vibecode Kit by Lâm Nguyễn
+Lightkit by Khangkk

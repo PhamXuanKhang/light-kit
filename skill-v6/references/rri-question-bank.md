@@ -1,4 +1,4 @@
-# RRI Universal Question Bank — Vibecode Kit v6.0
+# RRI Universal Question Bank — Lightkit v6.0
 
 ## How to Use
 

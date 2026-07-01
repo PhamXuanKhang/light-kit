@@ -1,8 +1,8 @@
-# Vibecode Kit — Case Studies & Metrics Framework
+# Lightkit — Case Studies & Metrics Framework
 
 ## Purpose
 
-This document provides templates for documenting real projects built with Vibecode Kit, along with metrics for evaluating methodology effectiveness. Each case study should show not only whether the project shipped, but also how much planning, reporting, human relay, and rework the workflow created.
+This document provides templates for documenting real projects built with Lightkit, along with metrics for evaluating methodology effectiveness. Each case study should show not only whether the project shipped, but also how much planning, reporting, human relay, and rework the workflow created.
 
 ---
 
@@ -59,7 +59,7 @@ Use these to verify whether v7 actually reduces token/context overhead and manua
 
 ### Comparison Metrics (if available)
 
-| Metric | Without Vibecode Kit | v6 Workflow | v7 Draft Workflow |
+| Metric | Without Lightkit | v6 Workflow | v7 Draft Workflow |
 |--------|---------------------|-------------|-------------------|
 | Time to first working version | [hours] | [hours] | [hours] |
 | Time to first code | [hours] | [hours] | [hours] |
@@ -166,7 +166,7 @@ Copy the template below for projects using the original v6 methodology.
 - **Date:** [When built]
 - **Starting Point:** [New project / Existing codebase with X files]
 
-## Vibecode Kit Flow
+## Lightkit Flow
 
 ### SCAN
 - Scan type: [Light / Full / Focused]
@@ -221,7 +221,7 @@ Copy the template below for projects using the original v6 methodology.
 
 ## Comparison (if applicable)
 - Previous attempt without methodology: [describe outcome]
-- With Vibecode Kit: [describe improvement]
+- With Lightkit: [describe improvement]
 ```
 
 ---

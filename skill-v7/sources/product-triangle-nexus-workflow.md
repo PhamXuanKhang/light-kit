@@ -1,6 +1,6 @@
 # Quy Trình Phát Triển Sản Phẩm Tối Ưu với AI: Luồng Làm Việc Nexus
 
-> Bản Markdown được đưa vào repo để làm nguồn tham khảo local cho Vibecode Kit v7. Nội dung được chuyển từ file local gốc: `D:\05_inbox\temp\Tam giác sản phẩm-Quy trình làm việc mới.pdf`.
+> Bản Markdown được đưa vào repo để làm nguồn tham khảo local cho Lightkit v7. Nội dung được chuyển từ file local gốc: `D:\05_inbox\temp\Tam giác sản phẩm-Quy trình làm việc mới.pdf`.
 
 ## 1. Bối Cảnh và Thách Thức
 

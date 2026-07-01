@@ -1,4 +1,4 @@
-# Walkthrough Example — Vibecode Kit v6.0
+# Walkthrough Example — Lightkit v6.0
 
 This is a condensed example showing how the 8-step workflow runs in practice. The project is a simple REST API for task management, built from scratch.
 

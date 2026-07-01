@@ -1,4 +1,4 @@
-# VIBECODE KIT v5.0
+# LIGHTKIT v5.0
 ## "The Agentic Edition"
 
 ---
@@ -405,7 +405,7 @@ THỢ (execute):
 ## 9. TÓM TẮT
 
 ```
-VIBECODE v5.0 = CONTEXT × PROTOCOL × VERIFICATION
+LIGHTKIT v5.0 = CONTEXT × PROTOCOL × VERIFICATION
 
 CONTEXT:         Scan + RRI + Memory
 PROTOCOL:        TIP + Completion Report + Escalation
@@ -418,5 +418,5 @@ VERIFICATION:    RRI Reverse + Requirement Traceability
 
 ---
 
-*Vibecode Kit v5.0 — "The Agentic Edition"*
+*Lightkit v5.0 — "The Agentic Edition"*
 *Chủ thầu điều phối, Thợ thi công, Con người ra quyết định.*

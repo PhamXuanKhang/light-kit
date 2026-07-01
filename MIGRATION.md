@@ -1,4 +1,4 @@
-# Migration Guide: Vibecode Kit v5 → v6
+# Migration Guide: Lightkit v5 → v6
 
 ## What Changed
 
@@ -49,7 +49,7 @@ v5 and v6 share the same core methodology (3 roles, 8 steps, RRI, TIP/Report pro
 ### Step 1: Install the new skill
 
 Replace your v5 skill/prompts with the v6 `.skill` file:
-1. Open `vibecode-kit.skill`
+1. Open `lightkit.skill`
 2. Click "Copy to your skills" in Claude
 3. The v6 skill will replace v5 behavior
 

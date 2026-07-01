@@ -1,4 +1,4 @@
-# Vibecode Kit v7 — Agent Workflow
+# Lightkit v7 — Agent Workflow
 
 V7 chuyển human workflow thành operating model cho coding agent. Agent workflow phải agent-agnostic: dùng được với Claude Code, Codex CLI, Cursor, Aider, Amp hoặc bất kỳ coding agent nào có khả năng đọc/sửa file và chạy kiểm tra.
 
@@ -75,12 +75,75 @@ Không dùng chat-only để kết luận pattern codebase nếu chưa có Evide
 
 ---
 
+## Mode selection by size and risk
+
+| Size / Risk | Default mode | Review | Notes |
+|---|---|---|---|
+| Tiny + Low | Solo Coding Agent | No | Inspect directly, answer or patch, verify only if applicable. |
+| Small + Low | Solo Coding Agent | No | Short plan or task card; keep artifacts minimal. |
+| Medium or multi-file | Solo Coding Agent | Optional | Add reviewer when behavior, API, or test risk is non-trivial. |
+| High risk | Agent + Reviewer | Required | Auth, security, privacy, data, billing, public API, dependency, release, migration. |
+| Critical / broad scale | Multi-Agent Orchestration | Required | Large audit, broad migration, multi-perspective verification. |
+
+### Risk levels
+
+| Risk | Meaning | Required behavior |
+|---|---|---|
+| Low | Local, reversible, no user/data/security impact | Compact evidence and quick verify. |
+| Medium | Multi-file behavior or user-visible change | Task verify and explicit acceptance criteria. |
+| High | Security/data/migration/billing/public API/outward-facing change | Human decision gate and independent review. |
+| Critical | Destructive, irreversible, release-blocking, or broad migration | Full workflow, reviewer, rollback/defer rationale. |
+
+Risk overrides size. A one-line auth or migration change is not Tiny.
+
+---
+
+## Reviewer protocol
+
+Reviewer input should stay compact:
+
+```markdown
+Goal:
+Changed files / diff:
+Verify evidence:
+Risk areas:
+Decision records:
+```
+
+Reviewer output:
+
+```markdown
+REVIEW VERDICT: PASS / NEEDS FIXES / BLOCKED
+Findings:
+- Severity: Critical/High/Medium/Low
+  Evidence:
+  Impact:
+  Fix required: Yes/No
+```
+
+Critical or High findings block `DONE` until fixed or explicitly deferred by the human decision owner with rationale.
+
+---
+
+## Finish protocol
+
+Before marking a task or branch ready:
+
+1. Run the agreed verify command or record why it is unavailable.
+2. Update the Verify Ledger for completed tasks.
+3. Confirm open Critical/High findings are fixed or explicitly deferred.
+4. Report `READY`, `NEEDS FIXES`, or `BLOCKED` compactly.
+
+Do not create PR/merge/release notes unless the user asks or the current context is already a release/handoff workflow.
+
+---
+
 ## Workspace memory
 
 Thay vì copy-paste TIP/Report qua chat, agent đọc/ghi artifact trong workspace:
 
 ```text
-.vibecode/
+.lightkit/
   codebase-brief.md
   project-brief.md
   prd-lite.md
@@ -94,7 +157,7 @@ Thay vì copy-paste TIP/Report qua chat, agent đọc/ghi artifact trong workspa
   verify-ledger.md
 ```
 
-Nếu project không muốn tạo thư mục `.vibecode/`, các artifact có thể nằm trong docs/workspace tạm. Nhưng nguyên tắc vẫn là: context nằm trong file, không nằm trong chuỗi copy-paste chat.
+Nếu project không muốn tạo thư mục `.lightkit/`, các artifact có thể nằm trong docs/workspace tạm. Nhưng nguyên tắc vẫn là: context nằm trong file, không nằm trong chuỗi copy-paste chat.
 
 ---
 
@@ -195,9 +258,9 @@ Nếu phải handoff cho agent/người khác, tạo handoff pack bằng file pa
 
 Goal:
 Read first:
-- `.vibecode/project-brief.md`
-- `.vibecode/lld.md`
-- `.vibecode/tasks/TASK-003.md`
+- `.lightkit/project-brief.md`
+- `.lightkit/lld.md`
+- `.lightkit/tasks/TASK-003.md`
 Current status:
 Verify evidence:
 Risks:

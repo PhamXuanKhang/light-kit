@@ -1,4 +1,4 @@
-# Changelog — Vibecode Kit
+# Changelog — Lightkit
 
 All notable changes to this project will be documented in this file.
 Format follows [Keep a Changelog](https://keepachangelog.com/).
@@ -46,7 +46,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 - `CHANGELOG.md` (this file)
 - `CURRENT_VERSION.md` with version info and roadmap
-- `vibecode-kit.skill` packaged installer file
+- `lightkit.skill` packaged installer file
 - Workspace restructure: `Masters/` and `Archive/` directories
 
 ### Removed
@@ -85,7 +85,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/).
 ### Added
 - Detailed templates per project type (v4 variants)
 - TRANSFORMATION_GUIDE.md
-- VIBECODE_KIT_V4_AUDIT.md
+- LIGHTKIT_V4_AUDIT.md
 
 ### Changed
 - Templates expanded with more detailed specifications

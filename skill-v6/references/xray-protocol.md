@@ -1,4 +1,4 @@
-# X-Ray Protocol — Vibecode Kit v6.0
+# X-Ray Protocol — Lightkit v6.0
 
 ## When to Activate
 1. **Handover**: Transfer project to another team/client
@@ -46,7 +46,7 @@ Create `PROJECT_XRAY.md` with sections:
 12. Troubleshooting
 13. Future Improvements
 
-### Step 4: Trace (Vibecode projects only)
+### Step 4: Trace (Lightkit projects only)
 Map: TIP files → files changed → requirements implemented.
 Extract from Completion Reports, RRI Report, Verify Report, Debug Reports.
 Output: Build Traceability Section in PROJECT_XRAY.md.
@@ -54,7 +54,7 @@ Output: Build Traceability Section in PROJECT_XRAY.md.
 ### Step 5: Package
 Handover Package Checklist:
 - Documentation: PROJECT_XRAY.md, README.md, CHANGELOG.md, .env.example
-- Vibecode Artifacts: RRI Report, Blueprint, Contract, TIP History, Verify Report, Debug Reports
+- Lightkit Artifacts: RRI Report, Blueprint, Contract, TIP History, Verify Report, Debug Reports
 - Code Quality: No debug console.logs, no unnecessary commented code, no critical TODOs, 0 TypeScript errors, 0 lint errors
 - Deployment: Build works, no build errors, env vars documented
 - Memory Capture: Patterns, common issues, tech choices documented
@@ -65,7 +65,7 @@ Traceability check: Feature → REQ-ID → RRI question traceable?
 
 ## Code Health Indicators
 
-**Healthy**: TypeScript strict, ESLint configured, Tests present, README updated, No critical TODOs, Vibecode artifacts present
+**Healthy**: TypeScript strict, ESLint configured, Tests present, README updated, No critical TODOs, Lightkit artifacts present
 
 **Needs Attention**: Some console.logs, Outdated dependencies, Missing documentation, Few/no tests
 

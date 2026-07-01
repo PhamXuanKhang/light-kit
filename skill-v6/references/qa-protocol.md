@@ -1,4 +1,4 @@
-# QA Protocol — Vibecode Kit v6.0
+# QA Protocol — Lightkit v6.0
 
 ## When to Activate
 1. **Verify Phase** (Step 7): After all TIPs complete

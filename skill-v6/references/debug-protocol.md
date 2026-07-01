@@ -1,4 +1,4 @@
-# Debug Protocol — Vibecode Kit v6.0
+# Debug Protocol — Lightkit v6.0
 
 ## When to Activate
 1. **Auto-trigger**: Quick fix fails 3rd time → auto-switch to Debug Protocol

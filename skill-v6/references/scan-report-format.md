@@ -1,4 +1,4 @@
-# Scan Report Format — Vibecode Kit v6.0
+# Scan Report Format — Lightkit v6.0
 
 > **Note:** The canonical Scan Report format is defined in `tip-and-report-formats.md`.
 > This file provides additional guidance on scan types and contractor response.

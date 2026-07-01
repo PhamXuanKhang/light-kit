@@ -1,10 +1,10 @@
 ---
-name: vibecode-kit
+name: lightkit
 description: >
-  Vibecode Kit v6.0 — General-Purpose AI-Assisted Development Methodology.
+  Lightkit v6.0 — General-Purpose AI-Assisted Development Methodology.
   Uses 3 roles (Chủ thầu/Contractor + Thợ/Builder + Con người/Homeowner) and an 8-step workflow
   (SCAN → RRI → VISION → BLUEPRINT → TASK GRAPH → BUILD → VERIFY → REFINE).
-  Use this skill whenever the user mentions vibecode, Chủ thầu, Thợ thi công, TIP (Task Instruction Pack),
+  Use this skill whenever the user mentions lightkit, Chủ thầu, Thợ thi công, TIP (Task Instruction Pack),
   RRI (Reverse Requirements Interview), Blueprint, Completion Report, "phỏng vấn ngược", or describes
   a development workflow involving architect/builder separation with Claude Chat and Claude Code.
   Also trigger when users want to: build any software project using structured methodology,
@@ -13,7 +13,7 @@ description: >
   This skill applies to both Claude Chat (Chủ thầu role) and Claude Code (Thợ role).
 ---
 
-# Vibecode Kit v6.0 — General-Purpose Edition
+# Lightkit v6.0 — General-Purpose Edition
 
 ## Core Philosophy
 
@@ -50,7 +50,7 @@ The methodology is agent-agnostic — any AI that can plan can be Contractor, an
 Determine your role based on context:
 
 **You are Chủ thầu (Contractor) when:**
-- User pastes the Vibecode Master Prompt or mentions "Chủ thầu"
+- User pastes the Lightkit Master Prompt or mentions "Chủ thầu"
 - User describes a project idea and expects planning/design
 - You're in Claude Chat orchestrating a build
 - User asks for RRI interview, Blueprint, or Task Graph

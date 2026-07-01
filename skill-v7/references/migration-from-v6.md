@@ -1,6 +1,6 @@
-# Migration from Vibecode Kit v6 to v7 Draft
+# Migration from Lightkit v6 to v7 Draft
 
-V7 không xóa giá trị của v6. V7 giữ các phần mạnh của v6 nhưng đổi cách vận hành để giảm token, giảm copy-paste và bỏ phụ thuộc Claude Chat / Claude Code như nền tảng mặc định.
+V7 không xóa giá trị của v6. V7 giữ các phần mạnh của v6 nhưng đổi cách vận hành để giảm token, giảm copy-paste và bỏ phụ thuộc Claude Chat / Claude Code như nền tảng mặc định. V7 thay "long formal process" bằng "right-sized mandatory workflow": task nhỏ không bị over-process, task rủi ro không bị under-process.
 
 ## Summary
 
@@ -148,9 +148,9 @@ Example:
 
 ```markdown
 Read:
-- `.vibecode/project-brief.md`
-- `.vibecode/lld.md`
-- `.vibecode/tasks/TASK-003.md`
+- `.lightkit/project-brief.md`
+- `.lightkit/lld.md`
+- `.lightkit/tasks/TASK-003.md`
 ```
 
 ---

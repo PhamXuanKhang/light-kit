@@ -1,6 +1,6 @@
-# Sources for Vibecode Kit v7
+# Sources for Lightkit v7
 
-This folder contains local/source materials used to design Vibecode Kit v7 Draft. Keep these files in the repository so future contributors can trace where concepts came from.
+This folder contains local/source materials used to design Lightkit v7 Draft. Keep these files in the repository so future contributors can trace where concepts came from.
 
 ## Local sources
 
@@ -19,7 +19,7 @@ This folder contains local/source materials used to design Vibecode Kit v7 Draft
 | W3C WCAG 2.2 | https://www.w3.org/TR/WCAG22/ | Accessibility criteria for UI/accessibility checks. |
 | Keep a Changelog | https://keepachangelog.com/en/1.1.0/ | Changelog convention for release documentation. |
 
-## Internal Vibecode sources
+## Internal Lightkit sources
 
 | Source | Used for |
 |---|---|

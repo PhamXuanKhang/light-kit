@@ -1,4 +1,4 @@
-# Templates — Vibecode Kit v6.0
+# Templates — Lightkit v6.0
 
 ## Vision Proposal Template
 

@@ -1,4 +1,4 @@
-# Vibecode Kit v7 — Compact Artifacts
+# Lightkit v7 — Compact Artifacts
 
 Mục tiêu của v7 là giảm token/context overhead bằng cách dùng artifact ngắn, có cấu trúc, chỉ mở rộng khi có rủi ro hoặc thất bại.
 
@@ -219,10 +219,15 @@ Target: vừa đủ để tạo task. Không viết tutorial hoặc giải thíc
 ```markdown
 # Task Graph
 
-| Task | Depends on | Goal | Verify |
-|---|---|---|---|
-| TASK-001 | None | | |
-| TASK-002 | TASK-001 | | |
+Route:
+- Size: Tiny / Small / Medium / Large
+- Risk: Low / Medium / High / Critical
+- Review required: Yes / No
+
+| Task | Depends on | Goal | Verify | Risk |
+|---|---|---|---|---|
+| TASK-001 | None | | | Low/Med/High |
+| TASK-002 | TASK-001 | | | Low/Med/High |
 
 Critical path:
 
@@ -240,6 +245,11 @@ Dùng thay TIP mặc định.
 ```markdown
 # TASK-001: [Name]
 
+Size: Tiny / Small / Medium / Large
+Risk: Low / Medium / High / Critical
+Review required: Yes / No
+Verify level: Quick / Task / Milestone / Deep
+
 Goal:
 
 Files:
@@ -249,6 +259,12 @@ Steps:
 1. 
 2. 
 3. 
+
+Test / TDD plan:
+- RED:
+- GREEN:
+- REFACTOR:
+- If no test-first: reason + alternate evidence
 
 Acceptance:
 - [ ] 
@@ -283,11 +299,16 @@ Dùng thay Verify Report dài mặc định.
 | Item | Requirement / Task | Evidence | Status | Notes |
 |---|---|---|---|---|
 | 1 | TASK-001 / REQ-001 | `npm test` PASS | PASS | |
-| 2 | TASK-002 / REQ-002 | Manual check | PASS | |
+| 2 | TASK-001 / TDD-RED | Test failed before fix for expected reason | PASS | Optional when TDD applies |
+| 3 | TASK-002 / REQ-002 | Manual check | PASS | |
 
 Open issues:
 
 Decisions needed:
+
+Review evidence:
+- Required: Yes / No
+- Verdict:
 
 Overall status: READY / NEEDS FIXES / BLOCKED
 ```

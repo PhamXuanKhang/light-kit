@@ -1,12 +1,12 @@
 ---
-name: vibecode-kit-v7-draft
+name: lightkit-v7-draft
 description: >
-  Vibecode Kit v7 Draft — Compact, agent-agnostic product engineering workflow.
+  Lightkit v7 Draft — Compact, agent-agnostic product engineering workflow.
   Use when the user wants a low-token coding-agent workflow, human-first product/tech process,
-  PRD-lite → SSD → LLD planning, evidence-based execution, compact reports, or migration from Vibecode v6.
+  Spec-Driven Development, PRD-lite → SSD → LLD planning, evidence-based execution, senior AI engineer operating mode, compact reports, teaching/understanding sessions, or migration from Lightkit v6.
 ---
 
-# Vibecode Kit v7 Draft — Compact Agent-Agnostic Product Engineering Workflow
+# Lightkit v7 Draft — Compact Agent-Agnostic Product Engineering Workflow
 
 ## Core Philosophy
 
@@ -14,9 +14,10 @@ description: >
 Human workflow first. Agent execution second.
 Repo evidence beats chat assumptions.
 Compact by default. Expand only on risk or failure.
+Spec guides implementation. Evidence updates specs.
 ```
 
-V7 keeps the useful discipline of Vibecode v6 — Evidence Scan, RRI, acceptance criteria, Debug, QA, Verify — but changes the operating model:
+V7 keeps the useful discipline of Lightkit v6 — Evidence Scan, RRI, acceptance criteria, Debug, QA, Verify — but changes the operating model:
 
 - No default dependency on Claude Chat + Claude Code.
 - No long reports by default.
@@ -42,6 +43,58 @@ ALIGN → EXPLORE → DECIDE → DETAIL → EXECUTE
 ```
 
 Evidence Scan is a pre-step for existing codebases.
+## Senior AI Engineer Mode
+
+V7 can operate as a senior AI engineer operating model: one agent may investigate, align, specify, plan, implement, verify, review risk, teach, and hand off.
+
+Senior autonomy has boundaries:
+
+- autonomous on local implementation details that match existing patterns;
+- collaborative on product, architecture, data, security, billing, cost, public API, and release-risk decisions;
+- evidence-bound on all codebase claims.
+
+Read: `references/senior-ai-engineer.md`.
+
+## Spec-Driven Compatibility
+
+V7 is compatible with Spec Kit-style Spec-Driven Development without requiring full ceremony for every task.
+
+Mapping:
+
+```text
+Specify -> PRD-lite / Spec
+Plan    -> SSD Options / LLD / Decisions
+Tasks   -> Task Graph / Task Cards
+Build   -> High-Precision Execution
+Analyze -> Convergence Check
+```
+
+Use full SDD for Medium/Large/high-risk work. Use SDD Lite for Tiny/Small work.
+
+Read: `references/spec-driven-development.md` and `references/command-protocols.md`.
+
+## Task Size & Risk Router
+
+V7 is a right-sized mandatory workflow: always route the task before acting, but use the smallest process that preserves decision quality.
+
+| Route | Use when | Minimum workflow | Do not create by default |
+|---|---|---|---|
+| Tiny | Typo, wording, simple config, direct repo question | Inspect evidence → answer/patch → quick verify if applicable | `.lightkit/`, PRD-lite, SSD, LLD |
+| Small | Bugfix, simple refactor, small feature in known pattern | Evidence → short plan/task card → implement → verify evidence | Full PRD/SSD/LLD unless risk escalates |
+| Medium | Behavior change across a few files, new endpoint/command/UI flow | Project Brief → PRD-lite or one-option rationale → Task Graph → Verify Ledger | Fake 3-option SSD |
+| Large | New module/product, architecture decision, broad migration | Full PRD-lite → SSD Options → Decision Log/ADR → LLD → Task Graph → Verify Ledger/QA | Compact-only execution |
+| Audit/Handoff | Onboarding, review, release, transfer to another person/agent | Handoff pack with file paths, decisions, risks, verify status | Long pasted context |
+
+### Risk override
+
+Escalate one level, and usually require human decision/review, when the task touches auth, security, privacy, data/schema migration, billing/payment, public API, dependencies with operational impact, irreversible/destructive action, or outward-facing release behavior.
+
+Hard rules:
+
+- Use the smallest artifact set that preserves decision quality.
+- Do not create three fake options when only one viable option exists.
+- Do not ask the user for facts that can be read from the repo.
+- Do not report `DONE` unless verification evidence exists; use `PARTIAL`, `BLOCKED`, or `UNVERIFIED` instead.
 
 ## Responsibilities, Not Platforms
 
@@ -76,10 +129,10 @@ Read: `references/agent-workflow.md`.
 
 ## Artifact Policy
 
-Default artifact set:
+Default artifact set for Medium+ work:
 
 ```text
-.vibecode/
+.lightkit/
   codebase-brief.md
   project-brief.md
   prd-lite.md
@@ -90,11 +143,12 @@ Default artifact set:
   tasks/
     TASK-001.md
   verify-ledger.md
+  teaching-checklist.md
 ```
 
-If the project should not create `.vibecode/`, keep the same artifact structure in a temporary or docs folder.
+If the project should not create `.lightkit/`, keep the same artifact structure in a temporary or docs folder. Tiny/Small work may use inline notes instead of files.
 
-Read: `references/compact-artifacts.md`.
+Read: `references/compact-artifacts.md` and `references/artifact-lifecycle.md`.
 
 ## Compact Output Rule
 
@@ -178,25 +232,36 @@ V7 keeps v6 protocols but changes output verbosity:
 - Debug: evidence → hypotheses → root cause → fix → verify.
 - QA: tiered verification, compact by default, full report for milestone/release.
 - X-Ray: use for handoff/onboarding/audit, not routine small tasks.
+- Teaching Session: use when the user wants incremental teaching, restatement, quizzes, and a running mastery checklist.
+- Convergence: use when spec, plan, tasks, code, tests, or docs may have drifted.
 
 ## When to Use Full Workflow
 
-Use full workflow for:
+Use full workflow for Large or high-risk work:
 
 - new product/module;
 - large feature;
 - significant architecture decision;
 - data model or migration;
-- security-sensitive work;
+- auth/security/privacy/billing behavior;
+- public API or outward-facing release behavior;
 - multi-stakeholder requirements;
 - handoff/release.
 
-Use v7 Lite for:
+Use v7 Lite for Tiny/Small work:
 
 - bugfix;
 - small feature;
 - simple refactor;
 - narrow QA/debug task.
+
+Lite still requires evidence and verification. It only removes unnecessary artifacts.
+
+## TDD and Review Rules
+
+- If behavior is testable, prefer `RED → GREEN → REFACTOR`: add or identify a failing test, confirm it fails for the expected reason, implement the smallest fix, confirm pass, then refactor only if useful.
+- If test-first is not practical, record why and use the next best evidence: build/typecheck, static inspection, manual scenario, runtime check, or independent review.
+- High-risk work requires review evidence before `DONE`, unless the human explicitly accepts the risk and defers review.
 
 ## Reference Files
 
@@ -209,6 +274,7 @@ Use v7 Lite for:
 | `references/agent-workflow.md` | Agent-agnostic operating model. |
 | `references/verification-policy.md` | Evidence-based verification and gates. |
 | `references/migration-from-v6.md` | How to migrate from v6 artifacts and roles to v7. |
+| `references/teaching-session.md` | Protocol for teaching sessions with incremental mastery checks and running checklist. |
 
 ## Golden Rules
 
@@ -220,3 +286,6 @@ Use v7 Lite for:
 6. Implement in small verifiable tasks.
 7. Report compactly unless risk/failure requires detail.
 8. Do not bind the workflow to a specific agent platform.
+9. Specs guide implementation; evidence updates specs.
+10. Senior autonomy stops at product and risk boundaries.
+11. Check convergence before handoff, release, or long-running `DONE` claims.

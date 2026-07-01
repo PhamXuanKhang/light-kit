@@ -1,4 +1,4 @@
-# RRI Methodology Family — Vibecode Kit v6.0
+# RRI Methodology Family — Lightkit v6.0
 
 ## Overview
 

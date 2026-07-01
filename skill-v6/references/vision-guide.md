@@ -1,4 +1,4 @@
-# Vision Guide — Vibecode Kit v6.0
+# Vision Guide — Lightkit v6.0
 
 ## Purpose
 
